@@ -21,7 +21,8 @@ const CustomTextInput = (props: CustomTextInputProps) => {
             borderRadius: props.borderRadius,
             borderTopEndRadius: props.borderRadius,
             borderTopStartRadius: props.borderRadius,
-            backgroundColor: '#F3F3F3'
+            backgroundColor: '#F3F3F3',
+            padding: 5
         }}
         mode="flat"
         activeUnderlineColor="transparent"
