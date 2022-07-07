@@ -1,13 +1,17 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
 import { TextInput, Text, Button } from 'react-native-paper';
+import CustomActionSheet from '../../components/CustomActionSheet/CustomActionSheet';
+import CustomAvtar from '../../components/CustomAvtar/CustomAvtar';
 import CustomButton from '../../components/CustomButton/CustomButton'
+import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
 import CustomTextInput from '../../components/CustomInput/CustomInput';
 import CustomText from '../../components/CustomText/CustomText';
+import ProductListView from '../../components/ProductListView/ProductListView';
 
 const PincodeScreen = () => {
     return <View style={styles.screen}>
-        <Image source={require('../../../assets/pincode.png')} />
+        {/* <Image source={require('../../../assets/pincode.png')} />
         <View style={styles.content}>
             <View style={styles.heading}>
                 <CustomText text="Welcome to " style={styles.welcome_text} />
@@ -17,7 +21,11 @@ const PincodeScreen = () => {
             <CustomText text="Enter your pincode to discover what’s around you." style={styles.text} />
             <CustomTextInput placeholder='Enter pin code' height={56} width={386} borderRadius={30} />
             <CustomButton text="Get Started" />
-        </View>
+        </View> */}
+        <CustomCarousel />
+        {/* <CustomAvtar/> */}
+        {/* <ProductListView/> */}
+        {/* <CustomActionSheet/> */}
     </View>
 }
 export default PincodeScreen;
