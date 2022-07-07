@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import PincodeScreen from './src/screens/onboarding/Pincode';
-import ShopByBrandScreen from './src/screens/shopByBrands/shopByBrands';
+import ShopByBrandScreen from './src/screens/shopByBrands/ShopByBrands';
 
 const theme = {
   ...DefaultTheme,
@@ -19,7 +19,8 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <View style={styles.container}>
-        <PincodeScreen />
+        {/* <PincodeScreen /> */}
+        <ShopByBrandScreen />
       </View>
     </PaperProvider>
   );

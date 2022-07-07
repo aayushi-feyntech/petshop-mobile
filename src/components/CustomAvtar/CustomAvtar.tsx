@@ -1,8 +1,15 @@
 import React from 'react';
 import { Avatar } from 'react-native-paper';
 
-const CustomAvtar = () => {
-    return <Avatar.Image size={104} source={require('../../../assets/pincode.png')} />
+export interface CustomAvtarProps {
+    size?: number;
+    avtarImage?: string;
+    onPress?: () => void;
+}
+
+
+const CustomAvtar = (props: CustomAvtarProps) => {
+    return <Avatar.Image size={props.size} source={require('../../../assets/pincode.png')} style={{ marginRight: 6 }} />
 }
 
 export default CustomAvtar;

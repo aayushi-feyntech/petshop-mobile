@@ -61,8 +61,7 @@ export default function CustomCarousel() {
     }
     return (
         <View style={styles.container}>
-            <StatusBar hidden />
-            <View style={{ height: 230, justifyContent: 'center' }}>
+            <View style={{ height: 240, justifyContent: 'center' }}>
                 <Animated.FlatList
                     data={DATA}
                     horizontal
@@ -76,9 +75,9 @@ export default function CustomCarousel() {
                     contentContainerStyle={{ paddingBottom: 100 }}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => {
-                        return <View style={{ width, alignItems: 'center', height: 300, }}>
+                        return <View style={{ width, alignItems: 'center', backgroundColor: 'pink' }}>
                             <View style={{ flex: 0.7, justifyContent: 'center' }}>
-                                <Image source={{ uri: item.image }} style={{ width: width, height: 200, }} />
+                                <Image source={{ uri: item.image }} style={{ width: width, height: 230, }} />
                             </View>
                         </View>
                     }}
@@ -93,7 +92,6 @@ export default function CustomCarousel() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        alignItems: 'center',
         justifyContent: 'center',
     },
 });

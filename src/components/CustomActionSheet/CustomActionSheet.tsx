@@ -36,7 +36,7 @@ const CustomActionSheet: FC = () => {
                 })
             }
         </ScrollView>
-    </View >,
+    </View >
     ];
 
     const showActionSheet = () => {
