@@ -9,10 +9,11 @@ export interface CustomButtonProps {
     mode?: "text" | "outlined" | "contained" | undefined;
     color?: string;
     disabled?: boolean;
-    onPress?: () => void;
+    handlePress: () => void;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
+    const { handlePress } = props;
     return <Button
         icon={props.icon}
         mode={props.mode || "contained"}
@@ -21,7 +22,7 @@ const CustomButton = (props: CustomButtonProps) => {
             height: props.height || 55, width: props.width || 216, justifyContent: "center",
             alignItems: "center"
         }}
-        onPress={() => console.log('Pressed')}>
+        onPress={() => handlePress()}>
         {props.text}
     </Button>
 

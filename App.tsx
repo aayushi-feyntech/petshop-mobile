@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import PincodeScreen from './src/screens/onboarding/Pincode';
-import ShopByBrandScreen from './src/screens/shopByBrands/ShopByBrands';
+import Routes from './src/routes/Routes';
+
 
 const theme = {
   ...DefaultTheme,
@@ -14,13 +14,30 @@ const theme = {
   },
 };
 
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button onPress={() => navigation.navigate('Details')}>Go to Details</Button>
+    </View>
+  );
+}
+
+function DetailsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
+
+
 
 export default function App() {
   return (
     <PaperProvider theme={theme}>
       <View style={styles.container}>
-        {/* <PincodeScreen /> */}
-        <ShopByBrandScreen />
+        <Routes />
       </View>
     </PaperProvider>
   );
@@ -29,8 +46,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
