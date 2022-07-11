@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { Card, Divider, Badge } from 'react-native-paper';
 import CustomText from '../CustomText/CustomText';
 import { MaterialIcons } from '@expo/vector-icons';
 import CustomButton from '../CustomButton/CustomButton';
+const { width, height } = Dimensions.get('screen');
 
 export interface ProductListViewProps {
     width?: number;
@@ -21,7 +22,7 @@ const ProductListView = (props: ProductListViewProps) => {
     };
 
     return (
-        <Card mode="outlined" style={styles.card}>
+        <Card mode="elevated" style={styles.card} elevation={5}>
             <Badge style={styles.badge} size={30}>10% off</Badge>
             <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} />
             <Divider />
@@ -47,7 +48,7 @@ const ProductListView = (props: ProductListViewProps) => {
                         />
                     </TouchableOpacity>
                 </View>
-                <CustomButton text="Add to cart" width={170} height={48} />
+                <CustomButton text="Add to cart" width={width*0.37} height={40} />
             </View>
 
         </Card>
@@ -60,11 +61,11 @@ export default ProductListView;
 const styles = StyleSheet.create({
     card: {
         borderRadius: 10,
-        width: 190,
+        width: width*0.42,
         height: 372
     },
     card_image: {
-        width: 106,
+        width: width*0.22,
         height: 140,
         justifyContent: 'center',
         marginRight: 42,
@@ -92,5 +93,5 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         borderRadius: 10
-    }
+    },
 });

@@ -9,7 +9,7 @@ export interface CustomButtonProps {
     mode?: "text" | "outlined" | "contained" | undefined;
     color?: string;
     disabled?: boolean;
-    handlePress: () => void;
+    handlePress?: () => void;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
