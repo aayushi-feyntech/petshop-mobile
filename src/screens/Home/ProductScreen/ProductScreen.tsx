@@ -10,7 +10,9 @@ const { width, height } = Dimensions.get('screen');
 const ProductScreen = () => {
     return <ScrollView style={styles.screen}>
         {/* <SafeAreaView > */}
-        <View style={styles.productScreen}>
+
+        <CustomActionSheet />
+        {/* <View style={styles.productScreen}>
             <View style={styles.cardFilterOptions}>
                 <CustomTextInput placeholder='Search' height={42} width={width * 0.7} borderRadius={30} />
                 <AntDesign name="filter" size={30} color="black" />
@@ -31,7 +33,7 @@ const ProductScreen = () => {
                     <ProductListView />
                 </View>
             </View>
-        </View>
+        </View> */}
 
         {/* </SafeAreaView> */}
     </ScrollView>

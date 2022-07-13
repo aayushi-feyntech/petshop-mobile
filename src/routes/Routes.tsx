@@ -36,10 +36,10 @@ const showHeaderRight = () => {
 const Routes = () => {
     return <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name="PincodeScreen" component={PincodeScreen} options={{ title: 'HOmE', headerShown: false }} />
+            {/* <Stack.Screen name="PincodeScreen" component={PincodeScreen} options={{ title: 'HOmE', headerShown: false }} />
             <Stack.Screen name="ShopByBrandsScreen" component={ShopByBrandsScreen} options={{
                 title: '', headerBackTitle: "Shop by brands", headerRight: showHeaderRight, headerTintColor: 'black'
-            }} />
+            }} /> */}
             <Stack.Screen name="ProductScreen" component={ProductScreen} options={{ title: '', headerBackTitle: "Whiskas", headerRight: showHeaderRight, headerTintColor: 'black' }} />
         </Stack.Navigator>
     </NavigationContainer>  //Whiskas
