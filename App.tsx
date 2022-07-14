@@ -1,45 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Button, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Routes from './src/routes/Routes';
+import { extendTheme, NativeBaseProvider } from 'native-base';
 
-
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: 'tomato',
-    accent: 'yellow',
+const newColorTheme = {
+  brand: {
+    900: '#8287af',
+    800: '#7c83db',
+    700: '#b3bef6',
   },
 };
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button onPress={() => navigation.navigate('Details')}>Go to Details</Button>
-    </View>
-  );
-}
-
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
-
-
+const theme = extendTheme({ colors: newColorTheme });
 
 export default function App() {
   return (
-    <PaperProvider theme={theme}>
+    <NativeBaseProvider theme={theme}>
       <View style={styles.container}>
         <Routes />
       </View>
-    </PaperProvider>
+    </NativeBaseProvider>
+    // <PaperProvider theme={theme}>
+
+    // </PaperProvider>
   );
 }
 

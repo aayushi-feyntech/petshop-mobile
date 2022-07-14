@@ -1,30 +1,30 @@
+import { Ionicons } from '@expo/vector-icons';
+import { Box, Button, Icon } from 'native-base';
 import React from 'react';
-import { Button } from 'react-native-paper';
 
 export interface CustomButtonProps {
     width?: number;
     height?: number;
     text: string;
     icon?: string;
-    mode?: "text" | "outlined" | "contained" | undefined;
-    color?: string;
+    variant?: "subtle" | "outline" | "solid" | undefined;
+    colorScheme?: string;
     disabled?: boolean;
-    handlePress?: () => void;
+    handlePress: () => void;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
     const { handlePress } = props;
     return <Button
-        icon={props.icon}
-        mode={props.mode || "contained"}
-        color={props.color || "#FFE01B"}
-        style={{
-            height: props.height || 55, width: props.width || 216, justifyContent: "center",
-            alignItems: "center"
+        // leftIcon={<Icon as={Ionicons} name="cloud-upload-outline" size="sm" />}
+        variant={props.variant || "solid"}
+        style={{ backgroundColor: props.variant === "outline" ? "white" : props.colorScheme || "#FFE01B", height: props.height || 55, width: props.width || 216, borderColor: "#898D8F" }}
+        _text={{
+            color: "#1F2937",
+            fontSize: 16
         }}
         onPress={() => handlePress()}>
         {props.text}
     </Button>
-
 }
 export default CustomButton;

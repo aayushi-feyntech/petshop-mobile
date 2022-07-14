@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { Card, Divider, Badge } from 'react-native-paper';
 import CustomText from '../CustomText/CustomText';
 import { MaterialIcons } from '@expo/vector-icons';
 import CustomButton from '../CustomButton/CustomButton';
 const { width, height } = Dimensions.get('screen');
 import { AntDesign } from '@expo/vector-icons';
+import { Badge, Box, Card, Divider } from 'native-base';
+import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
 
 export interface ProductListViewProps {
     width?: number;
@@ -22,10 +23,12 @@ const ProductListView = (props: ProductListViewProps) => {
     const onFavorite = () => {
     };
 
+    const [showOption, setShowOption] = useState(false);
+    console.log("showOption", showOption);
     return (
-        <Card mode="elevated" style={styles.card} elevation={5}>
+        <Box style={styles.card} >
             <Badge style={styles.badge} size={30}>10% off</Badge>
-            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} />
+            {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} /> */}
             <Divider />
             <View style={styles.card_body}>
                 <View style={styles.card_content}>
@@ -36,13 +39,14 @@ const ProductListView = (props: ProductListViewProps) => {
                     <CustomText text="Wt. 250g" />
                     <TouchableOpacity
                         onPress={() => {
+                            setShowOption(true);
                         }}
                     >
                         <AntDesign name="right" size={15} color="black" />
                     </TouchableOpacity>
 
                 </View>
-
+                <CustomActionSheet isOpen={showOption} onClose={() => setShowOption(false)} />
                 <View style={styles.card_content}>
                     <CustomText text="₹ 2000" />
                     <CustomText text="₹ 2500" style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid' }} />
@@ -56,9 +60,9 @@ const ProductListView = (props: ProductListViewProps) => {
                         />
                     </TouchableOpacity>
                 </View>
-                <CustomButton text="Add to cart" width={width * 0.37} height={40} />
+                <CustomButton text="Add to cart" width={width * 0.37} height={40} handlePress={() => { }} />
             </View>
-        </Card>
+        </Box>
     )
 };
 

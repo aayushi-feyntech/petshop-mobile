@@ -1,5 +1,5 @@
+import { Avatar } from 'native-base';
 import React from 'react';
-import { Avatar } from 'react-native-paper';
 
 export interface CustomAvtarProps {
     size?: number;
@@ -9,7 +9,7 @@ export interface CustomAvtarProps {
 
 
 const CustomAvtar = (props: CustomAvtarProps) => {
-    return <Avatar.Image size={props.size} source={props.avtarImage} style={{ marginRight: 6 }} /> 
+    return <Avatar size={props.size} source={props.avtarImage} style={{ marginRight: 6 }} /> 
 }
 
 export default CustomAvtar;

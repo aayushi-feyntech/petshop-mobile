@@ -1,6 +1,6 @@
+import { Input } from 'native-base';
 import React from 'react';
 import { View } from 'react-native';
-import { TextInput } from 'react-native-paper';
 
 export interface CustomTextInputProps {
     width?: number;
@@ -14,22 +14,16 @@ export interface CustomTextInputProps {
 }
 
 const CustomTextInput = (props: CustomTextInputProps) => {
-    return <TextInput
-        style={{
-            height: props.height,
-            width: props.width,
-            borderRadius: props.borderRadius,
-            borderTopEndRadius: props.borderRadius,
-            borderTopStartRadius: props.borderRadius,
-            backgroundColor: '#F3F3F3',
-            padding: 5
-        }}
-        mode="flat"
-        activeUnderlineColor="transparent"
-        underlineColor="transparent"
-        label={props.label}
-        error={props.error || false}
-        placeholder={props.placeholder}
-    />
+    return <Input variant="unstyled" width={props.width} placeholder={props.placeholder} isRequired={true} style={{
+        height: props.height,
+        width: props.width,
+        borderRadius: props.borderRadius,
+        borderTopEndRadius: props.borderRadius,
+        borderTopStartRadius: props.borderRadius,
+        backgroundColor: '#F3F3F3',
+        padding: 5
+    }} />
+
+
 }
 export default CustomTextInput;

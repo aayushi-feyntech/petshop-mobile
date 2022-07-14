@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Text, StyleSheet } from 'react-native';
-
+import React from 'react';
+import { StyleSheet } from 'react-native'
+import { Text } from 'native-base';
 export interface CustomTextProps {
     text: string;
     fontFamily?: string;

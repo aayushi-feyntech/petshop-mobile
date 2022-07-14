@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 import { Image, View, StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { TextInput, Text, Button } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomButton from '../../components/CustomButton/CustomButton'
-import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
 import CustomTextInput from '../../components/CustomInput/CustomInput';
 import CustomText from '../../components/CustomText/CustomText';
-import ProductListView from '../../components/ProductListView/ProductListView';
 const { width, height } = Dimensions.get('screen');
 import { useNavigation } from '@react-navigation/native';
+
 const PincodeScreen: FC = ({ }) => {
 
     const navigation = useNavigation();
@@ -27,7 +24,7 @@ const PincodeScreen: FC = ({ }) => {
                     <CustomText text="Hands!" style={styles.welcome_text} />
                 </View>
                 <CustomText text="Enter your pincode to discover what’s around you." style={styles.text} />
-                <CustomTextInput placeholder='Enter pin code' height={56} width={width*0.9} borderRadius={30} />
+                <CustomTextInput placeholder='Enter pin code' height={56} width={width * 0.9} borderRadius={30} />
                 <CustomButton text="Get Started" handlePress={() => onGetStarted()} />
             </View>
         </View>
@@ -48,7 +45,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: 'column',
-        height: height*0.35,
+        height: height * 0.35,
         marginTop: 60
     },
     heading: {
