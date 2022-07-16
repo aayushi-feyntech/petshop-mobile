@@ -3,37 +3,45 @@
 import React, { useRef, useState, FC } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { ActionSheetCustom as ActionSheet } from 'react-native-actionsheet';
-import CustomActionSheetButton from './CustomActionSheetButton';
-import WeightOptionArray from './WeightOptionArray';
+import CustomActionSheetButton from './OptionArray/CustomActionSheetButton';
+import WeightOptionArray from './OptionArray/WeightOptionArray';
 import { Button, Actionsheet, useDisclose, Center, NativeBaseProvider, Stack, HStack, Heading } from "native-base";
 import CustomButton from '../CustomButton/CustomButton';
-import SortByOptionArray from './SortByOptionArray';
+import SortByOptionArray from './OptionArray/SortByOptionArray';
+import VerifyMobileNumberOptionArray, { VerifyOTPOptionArray } from './OptionArray/VerifyMobileNumberOptionArray';
+import ApplyGiftCardOptionArray from './OptionArray/ApplyGiftCardOptionArray';
+import PrescriptionOptionArray from './OptionArray/PrescriptionOptionArray';
 const { width, height } = Dimensions.get('screen');
 
 export interface CustomActionSheetProps {
     isOpen: boolean;
+    heading?: string;
     onClose: () => void;
+    type: string
 }
 
 const CustomActionSheet = (props: CustomActionSheetProps) => {
     console.log("sopen...", props.isOpen)
-    const mapOptionArray = {
+    const mapOptionArray: any = {
         weight: [<WeightOptionArray />,
         <BottomActionButtons />
         ],
-        sortBy: [<SortByOptionArray />]
+        sortBy: [<SortByOptionArray />],
+        verifyMobileNum: [<VerifyOTPOptionArray />],
+        applyGiftCard: [<ApplyGiftCardOptionArray />],
+        prescription: [<PrescriptionOptionArray />]
     }
 
     return <Actionsheet isOpen={props.isOpen} onClose={props.onClose}>
         <Actionsheet.Content>
-            <Heading fontSize="lg" paddingLeft={8} alignSelf={{
+            {props.heading && <Heading fontSize="lg" paddingLeft={8} alignSelf={{
                 base: "flex-start",
             }}>
-                Sort By
-            </Heading>;
-
+                {props.heading}
+            </Heading>
+            }
             <Actionsheet.Item >
-                {mapOptionArray.sortBy}
+                {mapOptionArray[props.type]}
             </Actionsheet.Item>
         </Actionsheet.Content>
     </Actionsheet>

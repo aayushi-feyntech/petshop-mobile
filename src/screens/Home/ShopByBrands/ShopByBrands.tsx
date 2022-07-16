@@ -56,7 +56,7 @@ const ShopByBrandsScreen = () => {
             <CustomCarousel />
         </View>
 
-        <Box  style={styles.card}>
+        <Box style={styles.card}>
             <View style={styles.cardFilterOptions}>
                 <CustomTextInput placeholder='Search' height={44} width={width * 0.7} borderRadius={30} />
                 <AntDesign name="filter" size={30} color="black" />

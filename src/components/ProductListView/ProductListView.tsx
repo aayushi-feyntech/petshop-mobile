@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import CustomButton from '../CustomButton/CustomButton';
 const { width, height } = Dimensions.get('screen');
 import { AntDesign } from '@expo/vector-icons';
-import { Badge, Box, Card, Divider } from 'native-base';
+import { Badge, Box, Card, Divider, Image } from 'native-base';
 import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
 
 export interface ProductListViewProps {
@@ -26,41 +26,63 @@ const ProductListView = (props: ProductListViewProps) => {
     const [showOption, setShowOption] = useState(false);
     console.log("showOption", showOption);
     return (
-        <Box style={styles.card} >
-            <Badge style={styles.badge} size={30}>10% off</Badge>
-            {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} /> */}
-            <Divider />
-            <View style={styles.card_body}>
-                <View style={styles.card_content}>
-                    <CustomText text="Whiskas Chicken & Vegetables Adult Dry..." />
-                </View>
 
-                <View style={styles.card_content}>
-                    <CustomText text="Wt. 250g" />
-                    <TouchableOpacity
-                        onPress={() => {
-                            setShowOption(true);
-                        }}
-                    >
-                        <AntDesign name="right" size={15} color="black" />
-                    </TouchableOpacity>
+        // <View style={[styles.card, styles.shadowProp]}>
+        //     <View>
+        //         <Text style={styles.heading}>
+        //             React Native Box Shadow (Shadow Props)
+        //         </Text>
+        //     </View>
+        //     <Text>
+        //         Using the elevation style prop to apply box-shadow for iOS devices
+        //     </Text>
+        // </View>
 
+        <Box style={[styles.card, styles.shadowProp]} shadow={10}>
+            <View>
+                <Badge style={styles.badge} size={30}>10% off</Badge>
+                <Image source={{
+                    uri: 'https://picsum.photos/700'
+                }} alt="image" style={styles.card_image} />
+                {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} /> */}
+                <Divider />
+                <View style={styles.card_body}>
+                    <View style={styles.card_content}>
+                        <CustomText text="Whiskas Chicken & Vegetables Adult Dry..." style={{ fontWeight: 'normal' }} />
+                    </View>
+
+                    <View style={styles.card_content}>
+                        <CustomText text="Wt. 250g" style={{ fontWeight: 'normal' }} />
+                        <TouchableOpacity
+                            onPress={() => {
+                                setShowOption(true);
+                            }}
+                        >
+                            <AntDesign name="right" size={15} color="black" />
+                        </TouchableOpacity>
+
+                    </View>
+                    <CustomActionSheet
+                        isOpen={showOption}
+                        onClose={() => setShowOption(false)}
+                        type="weight"
+                    // heading={"Sort By"}
+                    />
+                    <View style={styles.card_content}>
+                        <CustomText text="₹ 2000" />
+                        <CustomText text="₹ 2500" style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid', fontWeight: 'normal' }} />
+                        <TouchableOpacity
+                            onPress={() => onFavorite()}
+                        >
+                            <MaterialIcons
+                                name={'favorite-outline'} //favorite
+                                size={32}
+                                color={'red'}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <CustomButton text="Add to cart" width={width * 0.37} height={40} handlePress={() => { }} />
                 </View>
-                <CustomActionSheet isOpen={showOption} onClose={() => setShowOption(false)} />
-                <View style={styles.card_content}>
-                    <CustomText text="₹ 2000" />
-                    <CustomText text="₹ 2500" style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid' }} />
-                    <TouchableOpacity
-                        onPress={() => onFavorite()}
-                    >
-                        <MaterialIcons
-                            name={'favorite-outline'} //favorite
-                            size={32}
-                            color={'red'}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <CustomButton text="Add to cart" width={width * 0.37} height={40} handlePress={() => { }} />
             </View>
         </Box>
     )
@@ -70,21 +92,33 @@ export default ProductListView;
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius: 10,
+        borderRadius: 16,
         width: width * 0.42,
-        height: 372
+        height: 372,
+        backgroundColor: 'white',
+    },
+    shadowProp: {
+        shadowColor: '#171717',
+        shadowOffset: { width: -2, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
     },
     card_image: {
         width: width * 0.22,
-        height: 140,
+        height: 125,
         justifyContent: 'center',
         marginRight: 42,
         marginLeft: 42,
         marginTop: 36,
-        marginBottom: 36
+        marginBottom: 26
     },
     card_body: {
         padding: 10,
+        display: 'flex',
+        flexDirection: 'column',
+        height: 185,
+        justifyContent: 'space-between',
+        resizeMode: 'contain'
     },
     card_content: {
         flexDirection: 'row',

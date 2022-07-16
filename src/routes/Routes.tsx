@@ -8,6 +8,7 @@ import PincodeScreen from "../screens/onboarding/Pincode";
 import ProductScreen from "../screens/Home/ProductScreen/ProductScreen";
 import ShopByBrandsScreen from "../screens/Home/ShopByBrands/ShopByBrands";
 import { Badge } from "native-base";
+import TempScreen from "../screens/Home/TempScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +27,7 @@ const showHeaderRight = () => {
                     onPress={() => { }}
                 >
                     <AntDesign name="shoppingcart" size={27} color="black" style={{ position: 'relative' }} />
-                    <Badge size={18} style={{ position: 'absolute', top: -3, left: 18 }}>3</Badge>
+                    <Badge fontSize={7} width={5} height={5} padding={0} variant="solid" colorScheme="red" borderRadius={"full"} style={{ position: 'absolute', top: -3, left: 18 }}>8</Badge>
 
                 </TouchableOpacity>
             </View>
@@ -36,7 +37,10 @@ const showHeaderRight = () => {
 const Routes = () => {
     return <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name="PincodeScreen" component={PincodeScreen} options={{ title: 'HOmE', headerShown: false }} />
+            {/* <Stack.Screen name="PincodeScreen" component={PincodeScreen} options={{ title: 'HOmE', headerShown: false }} /> */}
+            <Stack.Screen name="TempScreen" component={TempScreen} options={{ title: 'TempScreen', headerShown: true }} />
+
+            {/* TempScreen */}
             <Stack.Screen name="ShopByBrandsScreen" component={ShopByBrandsScreen} options={{
                 title: '', headerBackTitle: "Shop by brands", headerRight: showHeaderRight, headerTintColor: 'black'
             }} />

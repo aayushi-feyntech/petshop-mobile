@@ -11,7 +11,7 @@ const PincodeScreen: FC = ({ }) => {
     const navigation = useNavigation();
 
     const onGetStarted = () => {
-        navigation.navigate('ShopByBrandsScreen')
+        navigation.navigate('TempScreen')
     }
 
     return <ScrollView style={{ backgroundColor: 'white' }}>
