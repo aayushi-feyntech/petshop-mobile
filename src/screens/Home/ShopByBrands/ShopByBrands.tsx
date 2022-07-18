@@ -1,6 +1,6 @@
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { AspectRatio, Box, Card, Center, Heading, HStack, Stack, Text } from 'native-base';
+import { Box, } from 'native-base';
 import React from 'react';
 import { Image, View, StyleSheet, Dimensions, FlatList, SafeAreaView, StatusBar, ScrollView } from 'react-native';
 import CustomAvtar from '../../../components/CustomAvtar/CustomAvtar';
@@ -53,7 +53,7 @@ const ShopByBrandsScreen = () => {
 
     return <ScrollView horizontal={false}>
         <View style={styles.screen}>
-            <CustomCarousel />
+            <CustomCarousel width={width}/>
         </View>
 
         <Box style={styles.card}>

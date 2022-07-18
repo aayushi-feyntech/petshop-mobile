@@ -9,6 +9,7 @@ import ProductScreen from "../screens/Home/ProductScreen/ProductScreen";
 import ShopByBrandsScreen from "../screens/Home/ShopByBrands/ShopByBrands";
 import { Badge } from "native-base";
 import TempScreen from "../screens/Home/TempScreen";
+import ProductDetailScreen from "../screens/Home/ProductScreen/ProductDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,8 @@ const Routes = () => {
                 title: '', headerBackTitle: "Shop by brands", headerRight: showHeaderRight, headerTintColor: 'black'
             }} />
             <Stack.Screen name="ProductScreen" component={ProductScreen} options={{ title: '', headerBackTitle: "Whiskas", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} options={{ title: '', headerBackTitle: "ProductDetailScreen", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+
         </Stack.Navigator>
     </NavigationContainer>  //Whiskas
 }

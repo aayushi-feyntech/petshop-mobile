@@ -30,11 +30,11 @@ const DATA = [
     }
 ]
 
-export default function CustomCarousel() {
+export default function CustomCarousel(props: any) {
     const scrollX = React.useRef(new Animated.Value(0)).current;
 
     const Indicator = ({ scrollX }) => {
-        return <View style={{ flexDirection: 'row', position: 'absolute', bottom: 8, width, justifyContent: 'center' }}>
+        return <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0, width, justifyContent: 'center' }}>
             {DATA.map((_, i) => {
                 const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
 
@@ -75,9 +75,9 @@ export default function CustomCarousel() {
                     // contentContainerStyle={{ paddingBottom: 100 }}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => {
-                        return <View style={{ width, alignItems: 'center',  }}>
+                        return <View style={{ width: width, alignItems: 'center', }}>
                             <View style={{ flex: 1, justifyContent: 'center' }}>
-                                <Image source={{ uri: item.image }} style={{ width: width,  height: "100%" }} />
+                                <Image source={{ uri: item.image }} style={{ width: props.width, height: props.height || "100%" }} />
                             </View>
                         </View>
                     }}
