@@ -26,7 +26,7 @@ const CustomActionSheetButton = (props: CustomActionSheetButtonProps) => {
             alignItems: "center", borderRadius: props.borderRadius || 8, margin: 10, minWidth: 70, borderColor: "#898D8F"
         }}
         onPress={() => props.onOptionSelected(props.index)}>
-        <Text strikeThrough >{props.text}</Text>
+        <Text strikeThrough={false} >{props.text}</Text>
     </Button>
 
 }

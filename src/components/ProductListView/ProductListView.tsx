@@ -7,6 +7,7 @@ const { width, height } = Dimensions.get('screen');
 import { AntDesign } from '@expo/vector-icons';
 import { Badge, Box, Card, Divider, Image } from 'native-base';
 import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
+import { useNavigation } from '@react-navigation/native';
 
 export interface ProductListViewProps {
     width?: number;
@@ -20,71 +21,65 @@ export interface ProductListViewProps {
 }
 
 const ProductListView = (props: ProductListViewProps) => {
+    const navigation = useNavigation();
+
     const onFavorite = () => {
     };
 
     const [showOption, setShowOption] = useState(false);
     console.log("showOption", showOption);
     return (
+        <TouchableOpacity
+            onPress={() => navigation.navigate('ProductDetailScreen')}
+        >
+            <Box style={[styles.card, styles.shadowProp]} shadow={10}>
+                <View>
+                    <Badge style={styles.badge} size={30}>10% off</Badge>
+                    <Image source={{
+                        uri: 'https://picsum.photos/700'
+                    }} alt="image" style={styles.card_image} />
+                    {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} /> */}
+                    <Divider />
+                    <View style={styles.card_body}>
+                        <View style={styles.card_content}>
+                            <CustomText text="Whiskas Chicken & Vegetables Adult Dry..." style={{ fontWeight: 'normal' }} />
+                        </View>
 
-        // <View style={[styles.card, styles.shadowProp]}>
-        //     <View>
-        //         <Text style={styles.heading}>
-        //             React Native Box Shadow (Shadow Props)
-        //         </Text>
-        //     </View>
-        //     <Text>
-        //         Using the elevation style prop to apply box-shadow for iOS devices
-        //     </Text>
-        // </View>
+                        <View style={styles.card_content}>
+                            <CustomText text="Wt. 250g" style={{ fontWeight: 'normal' }} />
+                            <TouchableOpacity
+                                onPress={() => {
+                                    setShowOption(true);
+                                }}
+                            >
+                                <AntDesign name="right" size={15} color="black" />
+                            </TouchableOpacity>
 
-        <Box style={[styles.card, styles.shadowProp]} shadow={10}>
-            <View>
-                <Badge style={styles.badge} size={30}>10% off</Badge>
-                <Image source={{
-                    uri: 'https://picsum.photos/700'
-                }} alt="image" style={styles.card_image} />
-                {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} style={styles.card_image} /> */}
-                <Divider />
-                <View style={styles.card_body}>
-                    <View style={styles.card_content}>
-                        <CustomText text="Whiskas Chicken & Vegetables Adult Dry..." style={{ fontWeight: 'normal' }} />
+                        </View>
+                        <CustomActionSheet
+                            isOpen={showOption}
+                            onClose={() => setShowOption(false)}
+                            type="weight"
+                        // heading={"Sort By"}
+                        />
+                        <View style={styles.card_content}>
+                            <CustomText text="₹ 2000" />
+                            <CustomText text="₹ 2500" style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid', fontWeight: 'normal' }} />
+                            <TouchableOpacity
+                                onPress={() => onFavorite()}
+                            >
+                                <MaterialIcons
+                                    name={'favorite-outline'} //favorite
+                                    size={32}
+                                    color={'red'}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <CustomButton text="Add to cart" width={width * 0.37} height={40} handlePress={() => { }} />
                     </View>
-
-                    <View style={styles.card_content}>
-                        <CustomText text="Wt. 250g" style={{ fontWeight: 'normal' }} />
-                        <TouchableOpacity
-                            onPress={() => {
-                                setShowOption(true);
-                            }}
-                        >
-                            <AntDesign name="right" size={15} color="black" />
-                        </TouchableOpacity>
-
-                    </View>
-                    <CustomActionSheet
-                        isOpen={showOption}
-                        onClose={() => setShowOption(false)}
-                        type="weight"
-                    // heading={"Sort By"}
-                    />
-                    <View style={styles.card_content}>
-                        <CustomText text="₹ 2000" />
-                        <CustomText text="₹ 2500" style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid', fontWeight: 'normal' }} />
-                        <TouchableOpacity
-                            onPress={() => onFavorite()}
-                        >
-                            <MaterialIcons
-                                name={'favorite-outline'} //favorite
-                                size={32}
-                                color={'red'}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                    <CustomButton text="Add to cart" width={width * 0.37} height={40} handlePress={() => { }} />
                 </View>
-            </View>
-        </Box>
+            </Box>
+        </TouchableOpacity>
     )
 };
 
@@ -93,9 +88,9 @@ export default ProductListView;
 const styles = StyleSheet.create({
     card: {
         borderRadius: 16,
-        width: width * 0.42,
+        width: width * 0.433,
         height: 372,
-        backgroundColor: 'white',
+        backgroundColor: "#d6d1d1f",
     },
     shadowProp: {
         shadowColor: '#171717',

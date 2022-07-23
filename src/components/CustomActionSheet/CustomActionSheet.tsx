@@ -23,9 +23,7 @@ export interface CustomActionSheetProps {
 const CustomActionSheet = (props: CustomActionSheetProps) => {
     console.log("sopen...", props.isOpen)
     const mapOptionArray: any = {
-        weight: [<WeightOptionArray />,
-        <BottomActionButtons />
-        ],
+        weight: [<WeightOptionArray />],
         sortBy: [<SortByOptionArray />],
         verifyMobileNum: [<VerifyOTPOptionArray />],
         applyGiftCard: [<ApplyGiftCardOptionArray />],
