@@ -15,6 +15,9 @@ const TempScreen = () => {
         <CustomButton text="Shop By Brands" variant="solid" width={width} height={44} handlePress={() => { navigation.navigate('ShopByBrandsScreen') }} />
         <CustomButton text="Brand Products" variant="solid" width={width} height={44} handlePress={() => { navigation.navigate('ProductScreen') }} />
         <CustomButton text="Product Detail Screen" variant="solid" width={width} height={44} handlePress={() => { navigation.navigate('ProductDetailScreen') }} />
+        <CustomButton text="Home Screen" variant="solid" width={width} height={44} handlePress={() => { navigation.navigate('HomeScreen') }} />
+        <CustomButton text="Tab Screen" variant="solid" width={width} height={44} handlePress={() => { navigation.navigate('RootScreen') }} />
+
     </VStack>
 }
 

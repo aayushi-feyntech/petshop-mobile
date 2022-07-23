@@ -34,7 +34,7 @@ export default function CustomCarousel(props: any) {
     const scrollX = React.useRef(new Animated.Value(0)).current;
 
     const Indicator = ({ scrollX }) => {
-        return <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0, width, justifyContent: 'center' }}>
+        return <View style={{ flexDirection: 'row', position: 'absolute', bottom: 5 , width, justifyContent: 'center' }}>
             {DATA.map((_, i) => {
                 const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
 

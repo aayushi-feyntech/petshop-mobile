@@ -46,14 +46,10 @@ const ShopByBrandsScreen = () => {
 
     const navigation = useNavigation();
 
-    const onGetStarted = () => {
-        navigation.navigate('ProductScreen')
-    }
-
 
     return <ScrollView horizontal={false}>
         <View style={styles.screen}>
-            <CustomCarousel width={width}/>
+            <CustomCarousel width={width} />
         </View>
 
         <Box style={styles.card}>
@@ -140,12 +136,6 @@ const ShopByBrandsScreen = () => {
                 }
             </View>
         </Card> */}
-
-
-
-        <View style={styles.cus_btn}>
-            <CustomButton text="Product Screen" handlePress={() => onGetStarted()} />
-        </View>
     </ScrollView>
 }
 

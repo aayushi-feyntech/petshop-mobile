@@ -88,7 +88,7 @@ const ProductDetailScreen = () => {
             }
         </Box>
 
-        <Box style={styles.boxStyle}>
+        {/* <Box style={styles.boxStyle}>
             <View style={styles.amountDetail}>
                 <CustomText text="Ratings & reviews" style={{ padding: 10, fontSize: 16 }} />
                 {
@@ -106,13 +106,13 @@ const ProductDetailScreen = () => {
                 showReview && <CustomText style={{ padding: 10, fontWeight: 'normal' }} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  "/>
             }
-        </Box>
+        </Box> */}
 
         <Box style={styles.boxStyle}>
             <View>
                 <CustomText text="Product description" style={{ padding: 10, fontSize: 16 }} />
             </View>
-            <Input value="Delivery details for 444878" editable={false} borderRadius={28} height={50} paddingRight={10} variant="unstyled" placeholder="Unstyled" backgroundColor={"#FBEECA"} InputRightElement={<Icon as={<AntDesign name="edit" size={24} color="black" />} />} />
+            <Input value="Delivery details for 444878" editable={false} borderRadius={28} height={50} variant="unstyled" placeholder="Unstyled" backgroundColor={"#FBEECA"} InputRightElement={<Icon as={<AntDesign name="edit" size={24} color="black"/>} paddingRight={8} />} />
             <View style={[styles.card_content, styles.imageIcon]}>
                 <Image source={require('../../../../assets/delivery.png')} />
                 <CustomText text="Get it by Thu, 10 Feb" style={{ marginLeft: 10, color: '#898D8F', fontWeight: 'normal' }} />
