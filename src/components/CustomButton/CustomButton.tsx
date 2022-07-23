@@ -6,6 +6,7 @@ export interface CustomButtonProps {
     width?: number;
     height?: number;
     text: string;
+    textColor?: string;
     icon?: string;
     variant?: "subtle" | "outline" | "solid" | undefined;
     colorScheme?: string;
@@ -18,9 +19,9 @@ const CustomButton = (props: CustomButtonProps) => {
     return <Button
         // leftIcon={<Icon as={Ionicons} name="cloud-upload-outline" size="sm" />}
         variant={props.variant || "solid"}
-        style={{ backgroundColor: props.variant === "outline" ? "white" : props.colorScheme || "#FFE01B", height: props.height || 55, width: props.width || 216, borderColor: "#898D8F" }}
+        style={{ backgroundColor: props.variant === "outline" ? "white" : props.colorScheme || "#FFE01B", height: props.height || 55, width: props.width || 216, borderColor: "#898D8F", borderRadius: 8 }}
         _text={{
-            color: "#1F2937",
+            color: props.textColor ? props.textColor : "#1F2937",
             fontSize: 16
         }}
         onPress={() => handlePress()}>

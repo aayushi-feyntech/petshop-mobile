@@ -3,9 +3,6 @@ import { StyleSheet } from 'react-native'
 import { Text } from 'native-base';
 export interface CustomTextProps {
     text: string;
-    fontFamily?: string;
-    fontSize?: string;
-    color?: string;
     style?: any;
 }
 
