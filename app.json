@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Bottom tab navigation added",
+    "githubUrl": "https://github.com/aayushi-feyntech/petshop-mobile/tree/feature/product-flow/productDetails"
   }
 }
