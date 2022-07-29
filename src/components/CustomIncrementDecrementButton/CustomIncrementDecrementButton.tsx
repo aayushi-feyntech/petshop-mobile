@@ -2,7 +2,7 @@ import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button, View } from 'native-base';
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import CustomText from '../CustomText/CustomText';
+import CustomText from '../shared/CustomText/CustomText';
 
 const CustomIncrementDecrementButton = () => {
     const AddItemHandler = async () => {

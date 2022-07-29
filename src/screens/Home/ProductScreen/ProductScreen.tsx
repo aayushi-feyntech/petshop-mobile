@@ -1,8 +1,8 @@
 import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Dimensions, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
-import CustomActionSheet from "../../../components/CustomActionSheet/CustomActionSheet";
-import CustomTextInput from "../../../components/CustomInput/CustomInput";
+import CustomActionSheet from "../../../components/shared/CustomActionSheet/CustomActionSheet";
+import CustomTextInput from "../../../components/shared/CustomInput/CustomInput";
 import ProductListView from "../../../components/ProductListView/ProductListView";
 const { width, height } = Dimensions.get('screen');
 

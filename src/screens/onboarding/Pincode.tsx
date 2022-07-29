@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Image, View, StyleSheet, Dimensions, ScrollView } from 'react-native';
-import CustomButton from '../../components/CustomButton/CustomButton'
-import CustomTextInput from '../../components/CustomInput/CustomInput';
-import CustomText from '../../components/CustomText/CustomText';
+import CustomButton from '../../components/shared/CustomButton/CustomButton'
+import CustomTextInput from '../../components/shared/CustomInput/CustomInput';
+import CustomText from '../../components/shared/CustomText/CustomText';
 const { width, height } = Dimensions.get('screen');
 import { useNavigation } from '@react-navigation/native';
 

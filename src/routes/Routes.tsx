@@ -12,6 +12,11 @@ import TempScreen from "../screens/Home/TempScreen";
 import ProductDetailScreen from "../screens/Home/ProductScreen/ProductDetailScreen";
 import HomeScreen from "../screens/Home/HomeScreen/HomeScreen";
 import RootScreen from "../screens";
+import AddPetScreen from "../screens/MyPet/AddPetScreen";
+import ExploreScreen from "../screens/Explore/Explore";
+import ExploreBlogsScreen from "../screens/Explore/Blogs";
+import ExpertSayScreen from "../screens/Explore/ExpertSayScreen";
+import VetsScreen from "../screens/Explore/VetsScreen";
 const Stack = createNativeStackNavigator();
 
 const showHeaderRight = () => {
@@ -49,12 +54,22 @@ const Routes = () => {
                 title: '',
                 headerShown: false
             }} />
+            <Stack.Screen name="AddPetScreen" component={AddPetScreen} options={{
+                title: '',
+                headerShown: false
+            }} />
 
             <Stack.Screen name="ShopByBrandsScreen" component={ShopByBrandsScreen} options={{
                 title: '', headerBackTitle: "Shop by brands", headerRight: showHeaderRight, headerTintColor: 'black'
             }} />
             <Stack.Screen name="ProductScreen" component={ProductScreen} options={{ title: '', headerBackTitle: "New arrivals", headerRight: showHeaderRight, headerTintColor: 'black' }} />
             <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} options={{ title: '', headerBackTitle: "ProductDetailScreen", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+
+            {/* ExploreScreen */}
+
+            <Stack.Screen name="ExploreBlogsScreen" component={ExploreBlogsScreen} options={{ title: '', headerBackTitle: "Blogs", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="ExpertSayScreen" component={ExpertSayScreen} options={{ title: '', headerBackTitle: "Expert say", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="VetsScreen" component={VetsScreen} options={{ title: '', headerBackTitle: "Vets", headerRight: showHeaderRight, headerTintColor: 'black' }} />
 
         </Stack.Navigator>
     </NavigationContainer>  //Whiskas

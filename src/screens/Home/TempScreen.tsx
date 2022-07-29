@@ -1,8 +1,8 @@
 import { VStack } from "native-base";
 import React from "react";
 import { StyleSheet } from 'react-native';
-import CustomButton from "../../components/CustomButton/CustomButton";
-import CustomText from "../../components/CustomText/CustomText";
+import CustomButton from "../../components/shared/CustomButton/CustomButton";
+import CustomText from "../../components/shared/CustomText/CustomText";
 import { useNavigation } from '@react-navigation/native';
 
 const TempScreen = () => {

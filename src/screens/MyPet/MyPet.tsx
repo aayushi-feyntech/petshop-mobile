@@ -2,11 +2,14 @@ import * as React from 'react';
 import { View, Text, ImageBackground, StyleSheet, Dimensions, Image } from 'react-native';
 const { width, height } = Dimensions.get('screen');
 import { Box, Center } from 'native-base';
-import CustomText from '../../components/CustomText/CustomText';
+import CustomText from '../../components/shared/CustomText/CustomText';
 import { flexbox } from 'native-base/lib/typescript/theme/styled-system';
-import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomButton from '../../components/shared/CustomButton/CustomButton';
+import { useNavigation } from '@react-navigation/native';
 
 const MyPetScreen = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <ImageBackground source={require('../../../assets/myPetBackground.png')} resizeMode="cover" style={styles.image}>
@@ -16,7 +19,7 @@ const MyPetScreen = () => {
                     <CustomText text='You’ll be surprised with product recommendations, birthday discounts and special offers.' style={styles.para} />
                 </View>
                 <Center style={styles.btnBox}>
-                    <CustomButton text="Add my Buddy" variant="solid" width={width * 0.47} height={54} handlePress={() => { }} />
+                    <CustomButton text="Add my Buddy" variant="solid" width={width * 0.47} height={54} handlePress={() => { navigation.navigate('AddPetScreen') }} />
                 </Center>
             </ImageBackground>
         </View >
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         justifyContent: 'center',
-        display:'flex',
+        display: 'flex',
         width: width,
         // marginTop: height*0.5
     }

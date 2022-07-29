@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, ImageBackground } from 'react-native';
 import { Badge, Box, Card, Center, Divider, ScrollView, } from 'native-base';
-import CustomText from "../CustomText/CustomText";
+import CustomText from "../shared/CustomText/CustomText";
 const { width, height } = Dimensions.get('screen');
 // import r from '../../../assets/blogback1.png'
 

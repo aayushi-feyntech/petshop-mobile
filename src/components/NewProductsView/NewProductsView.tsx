@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native';
 import { Badge, Box, Card, Divider, ScrollView } from 'native-base';
-import CustomText from "../CustomText/CustomText";
+import CustomText from "../shared/CustomText/CustomText";
 const { width, height } = Dimensions.get('screen');
 
 const newProductList = [

@@ -1,10 +1,10 @@
 import { Box, Button, Heading, Icon, Input } from "native-base";
 import React, { useState } from "react";
 import { ScrollView, View, StyleSheet, Dimensions, TouchableOpacity, Image } from "react-native";
-import CustomActionSheetButton from "../../../components/CustomActionSheet/OptionArray/CustomActionSheetButton";
-import CustomCarousel from "../../../components/CustomCarousel/CustomCarousel";
+import CustomActionSheetButton from "../../../components/shared/CustomActionSheet/OptionArray/CustomActionSheetButton";
+import CustomCarousel from "../../../components/shared/CustomCarousel/CustomCarousel";
 import CustomIncrementDecrementButton from "../../../components/CustomIncrementDecrementButton/CustomIncrementDecrementButton";
-import CustomText from "../../../components/CustomText/CustomText";
+import CustomText from "../../../components/shared/CustomText/CustomText";
 import { AntDesign } from '@expo/vector-icons';
 import ProductListView from "../../../components/ProductListView/ProductListView";
 const { width, height } = Dimensions.get('screen');

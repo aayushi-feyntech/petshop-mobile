@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import CustomText from '../CustomText/CustomText';
+import CustomText from '../shared/CustomText/CustomText';
 import { MaterialIcons } from '@expo/vector-icons';
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../shared/CustomButton/CustomButton';
 const { width, height } = Dimensions.get('screen');
 import { AntDesign } from '@expo/vector-icons';
 import { Badge, Box, Card, Divider, Image } from 'native-base';
-import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
+import CustomActionSheet from '../shared/CustomActionSheet/CustomActionSheet';
 import { useNavigation } from '@react-navigation/native';
 
 export interface ProductListViewProps {
