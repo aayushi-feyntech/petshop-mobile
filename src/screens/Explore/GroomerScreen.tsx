@@ -1,17 +1,15 @@
 import { Box, Center, ScrollView, View, Image, HStack, VStack, Badge } from 'native-base';
 import * as React from 'react';
-import { Dimensions, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
-import CustomAvtar from '../../components/CustomAvtar/CustomAvtar';
+import { Dimensions, StyleSheet } from 'react-native';
 import BlogsOptionArray from '../../components/explore/ServicesAroundScrollView/BlogsOptionArray';
 import CommonFooter from '../../components/explore/ServicesAroundScrollView/CommonFooter';
 import CommonHeader from '../../components/explore/ServicesAroundScrollView/CommonHeader';
-import CustomButton from '../../components/shared/CustomButton/CustomButton';
 import CustomTextInput from '../../components/shared/CustomInput/CustomInput';
 import CustomText from '../../components/shared/CustomText/CustomText';
 const { width, height } = Dimensions.get('screen');
 
 
-const VetsScreen = () => {
+const GroomerScreen = () => {
 
     const blogData = [
         {
@@ -75,19 +73,12 @@ const VetsScreen = () => {
                                 <View style={styles.blogCardContent}>
                                     <CommonHeader blogDetails={blog} />
                                     <View style={styles.boxContainer}>
-                                        <Box style={styles.boxButton}>
-                                            <Center >
-                                                <CustomText text="Experience" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
-                                                <CustomText text="9 years" style={{ fontWeight: "normal" }} />
-                                            </Center>
-                                        </Box>
-
-                                        <Box style={styles.boxButton}>
-                                            <Center >
-                                                <CustomText text="Qualification" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
-                                                <CustomText text="B.V.Sc & A.H" style={{ fontWeight: "normal" }} />
-                                            </Center>
-                                        </Box>
+                                        <CustomText text="Services" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
+                                        <CustomText text="Pawdicure" style={{ fontWeight: "normal" }} />
+                                        <CustomText text="Teeth Brushing / Dental Spray" style={{ fontWeight: "normal" }} />
+                                        <CustomText text="Blow Drying" style={{ fontWeight: "normal" }} />
+                                        <CustomText text="Nail Clipping / Grinding" style={{ fontWeight: "normal" }} />
+                                        <CustomText text="Ear cleaning" style={{ fontWeight: "normal" }} />
                                     </View>
                                     <CommonFooter />
                                 </View>
@@ -102,7 +93,7 @@ const VetsScreen = () => {
 
     );
 }
-export default VetsScreen;
+export default GroomerScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -115,13 +106,13 @@ const styles = StyleSheet.create({
     },
 
     boxContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        // display: 'flex',
+        // flexDirection: 'row',
+        // justifyContent: 'space-between',
         width: width * 0.85,
         marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 5,
+        marginBottom: 30,
+        marginLeft: width * 0.25,
         marginRight: 5
     },
 
@@ -134,7 +125,6 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderRadius: 8,
         width: width * 0.4
-
     },
 
     topContainer: {
@@ -147,7 +137,7 @@ const styles = StyleSheet.create({
     },
     blogCard: {
         margin: width * 0.03,
-        height: 247,
+        height: 330,
         backgroundColor: 'white',
         borderRadius: 17,
         padding: height * 0.02,
@@ -185,5 +175,4 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
     },
-
 });

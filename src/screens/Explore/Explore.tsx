@@ -21,7 +21,7 @@ const ExploreScreen = () => {
                     <View style={styles.similarProducts}>
                         <CustomText text="Blogs" style={{ fontSize: 20 }} />
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('VetsScreen')}
+                            onPress={() => navigation.navigate('ExploreBlogsScreen')}
                         >
                             <Text underline>View more</Text>
                         </TouchableOpacity>
@@ -30,16 +30,19 @@ const ExploreScreen = () => {
                     <BlogScrollView />
                 </Box>
                 <View style={styles.container}>
-
-                    <Box style={styles.exploreContainer}>
-                        <View style={styles.expertCard}>
-                            <View style={styles.expertTextContainer}>
-                                <CustomText text="What experts say?" style={{ fontSize: 20 }} />
-                                <CustomText text="Lorem ipsum dolor sit amet. Et velit." style={{ fontWeight: 'normal' }} />
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('ExpertSayScreen')}
+                    >
+                        <Box style={styles.exploreContainer}>
+                            <View style={styles.expertCard}>
+                                <View style={styles.expertTextContainer}>
+                                    <CustomText text="What experts say?" style={{ fontSize: 20 }} />
+                                    <CustomText text="Lorem ipsum dolor sit amet. Et velit." style={{ fontWeight: 'normal' }} />
+                                </View>
+                                <Image source={require('../../../assets/graphics.png')} />
                             </View>
-                            <Image source={require('../../../assets/graphics.png')} />
-                        </View>
-                    </Box>
+                        </Box>
+                    </TouchableOpacity>
 
                     <Box style={styles.newProductCard}>
                         <CustomText text="Best Verified services around you" style={{ fontSize: 16 }} />
@@ -59,7 +62,7 @@ const ExploreScreen = () => {
 
                             <Center style={styles.textBox}>
                                 <CustomText text="Meet, find help, share ideas & discuss pets with 8k+ pet parents from all over India. " style={{ fontSize: 14, color: '#898D8F', textAlign: 'center' }} />
-                                <CustomButton text="Join Community" variant="solid" width={width * 0.47} height={54} handlePress={() => { }} />
+                                <CustomButton text="Join Community" variant="solid" width={width * 0.47} height={54} handlePress={() => { navigation.navigate('JoinCommunityScreen') }} />
                             </Center>
                         </View>
                     </Center>
@@ -132,7 +135,6 @@ const styles = StyleSheet.create({
     imgBox: {
         position: 'relative',
         height: 200
-
     },
     img1: {
         position: 'absolute',

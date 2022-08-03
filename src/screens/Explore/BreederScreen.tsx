@@ -1,17 +1,15 @@
 import { Box, Center, ScrollView, View, Image, HStack, VStack, Badge } from 'native-base';
 import * as React from 'react';
-import { Dimensions, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
-import CustomAvtar from '../../components/CustomAvtar/CustomAvtar';
+import { Dimensions, StyleSheet } from 'react-native';
 import BlogsOptionArray from '../../components/explore/ServicesAroundScrollView/BlogsOptionArray';
 import CommonFooter from '../../components/explore/ServicesAroundScrollView/CommonFooter';
 import CommonHeader from '../../components/explore/ServicesAroundScrollView/CommonHeader';
-import CustomButton from '../../components/shared/CustomButton/CustomButton';
 import CustomTextInput from '../../components/shared/CustomInput/CustomInput';
 import CustomText from '../../components/shared/CustomText/CustomText';
 const { width, height } = Dimensions.get('screen');
 
 
-const VetsScreen = () => {
+const BreedersScreen = () => {
 
     const blogData = [
         {
@@ -74,35 +72,21 @@ const VetsScreen = () => {
                             return <HStack style={[styles.blogCard, styles.shadowProp]}>
                                 <View style={styles.blogCardContent}>
                                     <CommonHeader blogDetails={blog} />
-                                    <View style={styles.boxContainer}>
-                                        <Box style={styles.boxButton}>
-                                            <Center >
-                                                <CustomText text="Experience" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
-                                                <CustomText text="9 years" style={{ fontWeight: "normal" }} />
-                                            </Center>
-                                        </Box>
 
-                                        <Box style={styles.boxButton}>
-                                            <Center >
-                                                <CustomText text="Qualification" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
-                                                <CustomText text="B.V.Sc & A.H" style={{ fontWeight: "normal" }} />
-                                            </Center>
-                                        </Box>
-                                    </View>
                                     <CommonFooter />
                                 </View>
                             </HStack>
                         })
                     }
+
                 </View>
 
             </ScrollView>
 
         </View>
-
     );
 }
-export default VetsScreen;
+export default BreedersScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -115,9 +99,9 @@ const styles = StyleSheet.create({
     },
 
     boxContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        // display: 'flex',
+        // flexDirection: 'row',
+        // justifyContent: 'space-between',
         width: width * 0.85,
         marginTop: 10,
         marginBottom: 10,
@@ -134,7 +118,6 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderRadius: 8,
         width: width * 0.4
-
     },
 
     topContainer: {
@@ -147,7 +130,7 @@ const styles = StyleSheet.create({
     },
     blogCard: {
         margin: width * 0.03,
-        height: 247,
+        height: 196,
         backgroundColor: 'white',
         borderRadius: 17,
         padding: height * 0.02,
@@ -157,6 +140,9 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     blogCardContent: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         // padding: 10,
         width: width * 0.45,
         // marginTop: height * 0.05
@@ -185,5 +171,4 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
     },
-
 });

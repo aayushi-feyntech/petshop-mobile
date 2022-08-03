@@ -3,36 +3,54 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, ImageBackg
 import { Badge, Box, Card, Center, Divider, ScrollView, } from 'native-base';
 import CustomText from "../../shared/CustomText/CustomText";
 const { width, height } = Dimensions.get('screen');
+import { useNavigation } from '@react-navigation/native';
+
 // import img from '../../../../assets/'
 const newProductList = [
     {
         img: require('../../../../assets/blogback1.png'),
-        title: "Black white ombre cotton dog leash...",
-        description: "Super quality built for small dogs"
+        service: "Grooming services",
+        routing: 'GroomerScreen'
     }, {
         img: require('../../../../assets/blogback2.png'),
-        title: "Wooden bird nesting box",
-        description: "Super quality built for small dogs"
+        service: "Veterinary",
+        routing: "VetsScreen"
     },
     {
         img: require('../../../../assets/blogback2.png'),
-        title: "Wooden bird nesting box",
-        description: "Super quality built for small dogs"
+        service: "Trainer services",
+        routing: "TrainerScreen"
+    },
+    {
+        img: require('../../../../assets/blogback1.png'),
+        service: "Recreation centers",
+        routing: 'RecreationScreen'
+    }, {
+        img: require('../../../../assets/blogback2.png'),
+        service: "Boarding centers",
+        routing: "BoardingCenterScreen"
+    },
+    {
+        img: require('../../../../assets/blogback2.png'),
+        service: "Breeders",
+        routing: "BreedersScreen"
     },
 ]
 
 const ServicesAroundScrollView = () => {
+    const navigation = useNavigation();
+
     return <ScrollView horizontal={true}>
         {
             newProductList.map((item) => {
                 return <View style={styles.container}>
                     <Box style={[styles.card, styles.shadowProp]}>
                         <View style={styles.imgBox}>
-                            <Image source={require('../../../../assets/blogback1.png')} style={styles.image} />
+                            <Image source={item.img} style={styles.image} />
                         </View>
                         <View style={styles.card_body}>
-                            <CustomText text="Grooming services" />
-                            <TouchableOpacity>
+                            <CustomText text={item.service} />
+                            <TouchableOpacity onPress={() => navigation.navigate(item.routing)}>
                                 <CustomText text="View more" style={{ fontWeight: 'normal', color: '#F15F24' }} />
                             </TouchableOpacity>
                         </View>
@@ -52,7 +70,6 @@ const styles = StyleSheet.create({
         height: "90%",
         marginBottom: 0,
         borderRadius: 16,
-        backgroundColor: 'white',
         position: 'relative',
     },
     image: {
@@ -74,6 +91,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginLeft: width * 0.015,
         height: 200,
+        width: 150
+
     },
     shadowProp: {
         shadowColor: '#171717',

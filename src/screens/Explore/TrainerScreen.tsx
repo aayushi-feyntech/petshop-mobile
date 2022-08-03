@@ -1,57 +1,39 @@
 import { Box, Center, ScrollView, View, Image, HStack, VStack, Badge } from 'native-base';
 import * as React from 'react';
-import { Dimensions, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
-import CustomAvtar from '../../components/CustomAvtar/CustomAvtar';
+import { Dimensions, StyleSheet } from 'react-native';
 import BlogsOptionArray from '../../components/explore/ServicesAroundScrollView/BlogsOptionArray';
 import CommonFooter from '../../components/explore/ServicesAroundScrollView/CommonFooter';
 import CommonHeader from '../../components/explore/ServicesAroundScrollView/CommonHeader';
-import CustomButton from '../../components/shared/CustomButton/CustomButton';
 import CustomTextInput from '../../components/shared/CustomInput/CustomInput';
 import CustomText from '../../components/shared/CustomText/CustomText';
 const { width, height } = Dimensions.get('screen');
 
 
-const VetsScreen = () => {
+const TrainerScreen = () => {
 
     const blogData = [
         {
-            imgSrc: require('../../../assets/explore/dog3.png'),
-            authorSrc: require('../../../assets/explore/dog3.png'),
-            publishedDay: '12 hour ago',
-            heading: 'Dr Jenny Willson',
-            subHeading: 'Jenny Willson',
-            description: 'Activities that can motivate  motivate your dog...',
-            readTime: '1 min read'
-        },
-        {
-            imgSrc: require('../../../assets/explore/dog3.png'),
-            authorSrc: require('../../../assets/explore/dog3.png'),
-            publishedDay: '12 hour ago',
+            imgSrc: require('../../../assets/explore/dog1.png'),
+            publishedDay: 'Today',
             heading: 'Motivate your dog',
             subHeading: 'Jenny Willson',
-            description: 'Activities that can motivate  motivate your dog...',
-            readTime: '1 min read'
+            description: 'Activities that can motivate your dog.Activities that can motivate your dog.ext'
         },
         {
-            imgSrc: require('../../../assets/explore/dog3.png'),
-            authorSrc: require('../../../assets/explore/dog3.png'),
-            publishedDay: '12 hour ago',
+            imgSrc: require('../../../assets/explore/dog2.png'),
+            publishedDay: 'Today',
             heading: 'Motivate your dog',
             subHeading: 'Jenny Willson',
-            description: 'Activities that can motivate  motivate your dog...',
-            readTime: '1 min read'
+            description: 'Activities that can motivate your dog.Activities that can motivate your dog.ext'
         },
         {
-            imgSrc: require('../../../assets/explore/dog3.png'),
-            authorSrc: require('../../../assets/explore/dog3.png'),
-            publishedDay: '12 hour ago',
+            imgSrc: require('../../../assets/explore/dog1.png'),
+            publishedDay: 'Today',
             heading: 'Motivate your dog',
             subHeading: 'Jenny Willson',
-            description: 'Activities that can motivate  motivate your dog...',
-            readTime: '1 min read'
-        },
+            description: 'Activities that can motivate your dog.Activities that can motivate your dog.ext'
+        }
     ]
-
 
     return (
         <View style={styles.container}>
@@ -74,14 +56,8 @@ const VetsScreen = () => {
                             return <HStack style={[styles.blogCard, styles.shadowProp]}>
                                 <View style={styles.blogCardContent}>
                                     <CommonHeader blogDetails={blog} />
-                                    <View style={styles.boxContainer}>
-                                        <Box style={styles.boxButton}>
-                                            <Center >
-                                                <CustomText text="Experience" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
-                                                <CustomText text="9 years" style={{ fontWeight: "normal" }} />
-                                            </Center>
-                                        </Box>
 
+                                    <View style={styles.boxContainer}>
                                         <Box style={styles.boxButton}>
                                             <Center >
                                                 <CustomText text="Qualification" style={{ color: "#898D8F", fontSize: 12, fontWeight: "normal" }} />
@@ -89,6 +65,7 @@ const VetsScreen = () => {
                                             </Center>
                                         </Box>
                                     </View>
+
                                     <CommonFooter />
                                 </View>
                             </HStack>
@@ -102,7 +79,7 @@ const VetsScreen = () => {
 
     );
 }
-export default VetsScreen;
+export default TrainerScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -115,12 +92,12 @@ const styles = StyleSheet.create({
     },
 
     boxContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        // display: 'flex',
+        // flexDirection: 'row',
+        // justifyContent: 'space-between',
         width: width * 0.85,
-        marginTop: 10,
-        marginBottom: 10,
+        marginTop: 15,
+        marginBottom: 15,
         marginLeft: 5,
         marginRight: 5
     },
@@ -134,7 +111,6 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderRadius: 8,
         width: width * 0.4
-
     },
 
     topContainer: {
@@ -147,7 +123,7 @@ const styles = StyleSheet.create({
     },
     blogCard: {
         margin: width * 0.03,
-        height: 247,
+        height: 257,
         backgroundColor: 'white',
         borderRadius: 17,
         padding: height * 0.02,
@@ -185,5 +161,4 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
     },
-
 });

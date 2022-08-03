@@ -17,6 +17,12 @@ import ExploreScreen from "../screens/Explore/Explore";
 import ExploreBlogsScreen from "../screens/Explore/Blogs";
 import ExpertSayScreen from "../screens/Explore/ExpertSayScreen";
 import VetsScreen from "../screens/Explore/VetsScreen";
+import BoardingCenterScreen from "../screens/Explore/BoardingCenterScreen";
+import GroomerScreen from "../screens/Explore/GroomerScreen";
+import TrainerScreen from "../screens/Explore/TrainerScreen";
+import RecreationScreen from "../screens/Explore/RecreationScreen";
+import BreedersScreen from "../screens/Explore/BreederScreen";
+import JoinCommunityScreen from "../screens/Explore/JoinCommunityScreen";
 const Stack = createNativeStackNavigator();
 
 const showHeaderRight = () => {
@@ -69,7 +75,15 @@ const Routes = () => {
 
             <Stack.Screen name="ExploreBlogsScreen" component={ExploreBlogsScreen} options={{ title: '', headerBackTitle: "Blogs", headerRight: showHeaderRight, headerTintColor: 'black' }} />
             <Stack.Screen name="ExpertSayScreen" component={ExpertSayScreen} options={{ title: '', headerBackTitle: "Expert say", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="JoinCommunityScreen" component={JoinCommunityScreen} options={{ title: '', headerBackTitle: "Join the community", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+
             <Stack.Screen name="VetsScreen" component={VetsScreen} options={{ title: '', headerBackTitle: "Vets", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="BoardingCenterScreen" component={BoardingCenterScreen} options={{ title: '', headerBackTitle: "Boarding centers", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="GroomerScreen" component={GroomerScreen} options={{ title: '', headerBackTitle: "Groomers", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+
+            <Stack.Screen name="TrainerScreen" component={TrainerScreen} options={{ title: '', headerBackTitle: "Trainer", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="RecreationScreen" component={RecreationScreen} options={{ title: '', headerBackTitle: "Recreation centers", headerRight: showHeaderRight, headerTintColor: 'black' }} />
+            <Stack.Screen name="BreedersScreen" component={BreedersScreen} options={{ title: '', headerBackTitle: "BreedersScreen", headerRight: showHeaderRight, headerTintColor: 'black' }} />
 
         </Stack.Navigator>
     </NavigationContainer>  //Whiskas
